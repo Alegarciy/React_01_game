@@ -32,10 +32,22 @@ class App extends Component<AppProps, AppState> {
 render(<App />, document.getElementById('root'));
 
 class Square extends React.Component {
+
+  // add a constructor to the class
+  // to initialize state;
+  constructor(props){
+    super(props);
+    this.state={
+      value:null,
+    }
+  }
+
   render() {
     return (
-      <button className="square" onClick={() => {alert('click'); }}>
-        {this.props.value}
+      <button 
+        className="square" 
+        onClick={() => this.setState({value:'X'})}>
+        {this.state.value}
       </button>
     );
   }
